@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="/swapi.js"></script>  <!-- Script de StarWars -->
+    <script src="/script.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <header id = "cabecera">
+        <p>Search a StarWars character</p>
+    </header>
+    
+    <div class = "carrusel">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/DXHLGFJ4TFBTPHDV7B5NSKUEBE.jpg" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://sm.ign.com/ign_latam/gallery/e/every-star/every-star-wars-game-in-development_72wx.jpg" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2020/05/hipertextual-star-wars-celebra-may-the-4th-be-with-you-con-extraordinario-video-que-rinde-homenaje-toda-saga-2020581511.jpg?fit=1920%2C1080&ssl=1" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </div>
+
+    <div id="busqueda">
+        <input id="nombre_personaje" />
+        <button onclick="boton_buscar()">Buscar</button>      
+    </div>
+
+    <div id="card_personaje">
+        
+    </div>
+
+
+<div class = "contenedor-card">
+
+    <div class="card-group">
+
+        <div class="card">
+        <img class="card-imagen" src="https://www.liveabout.com/thmb/Hcp7PY9rvEMdj7rM3JMrmX07LPE=/1026x1026/smart/filters:no_upscale()/EP6-KEY-125_R_8x10-56a83c025f9b58b7d0f1b453.jpg">
+        <div class="card-body">
+        <h4 class="card-title">Luke Skywalker</h4>
+        </div>
+        </div>
+
+        <div class="card">
+        <img class="card-imagen" src="https://i.pinimg.com/originals/0f/d5/ad/0fd5ad55afac1a32c2f7a0fb30fff1ca.jpg" >
+        <div class="card-body" >
+        <h4 class="card-title">C-P30</h4>
+        </div>
+        </div>
+
+        <div class="card">
+        <img class="card-imagen" src="https://www.sanborns.com.mx/imagenes-sanborns-ii/1200/817961020257.jpg">
+        <div class="card-body">
+        <h4 class="card-title">R2-D2</h4>
+        </div>
+        </div>
+
+        <div class="card">
+        <img class="card-imagen" src="https://wipy.tv/wp-content/uploads/2020/04/fue-leia-organa-una-maestra-jedi-1200x900.jpg">
+        <div class="card-body">
+        <h4 class="card-title">Leia Organa</h4>
+        </div>
+        </div>
+    
+        <div class="card">
+        <img class="card-imagen" src="https://holocronstarwarsnoticiasdiarias.files.wordpress.com/2017/06/owenlars00.png?w=810" >
+        <div class="card-body" >
+        <h4 class="card-title">Owen Lars</h4>
+        </div>
+        </div>
+        </div>
+
+    <div class="card-group">
+
+        <div class="card">
+        <img class="card-imagen" src="https://i.pinimg.com/736x/2b/bb/71/2bbb712405c574c6ce78730e00464a8e--star-wars-characters-star-wars-episodes.jpg">
+        <div class="card-body">
+        <h4 class="card-title">Beru Whitesun lars</h4>
+        </div>
+        </div>
+
+        <div class="card">
+        <img class="card-imagen" src="data:image/jpeg;base64,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" >
+        <div class="card-body" >
+        <h4 class="card-title">R5-D4</h4>
+        </div>
+        </div>
+
+        <div class="card">
+        <img class="card-imagen" src="https://pbs.twimg.com/media/EouvaiYVoAAmmQ0.jpg">
+        <div class="card-body">
+        <h4 class="card-title">Biggs Darklighter</h4>
+        </div>
+        </div>
+
+        <div class="card">
+        <img class="card-imagen" src="https://www.cinemascomics.com/wp-content/uploads/2020/06/poder-darth-vader.jpg">
+        <div class="card-body">
+        <h4 class="card-title">Darth Vader</h4>
+        </div>
+        </div>
+    
+        <div class="card">
+        <img class="card-imagen" src="https://imagenes.20minutos.es/files/og_thumbnail/uploads/imagenes/2021/05/12/ewan-mcgregor-como-obi-wan-kenobi.jpeg" >
+        <div class="card-body" >
+        <h4 class="card-title">Obi-Wan Kenobi</h4>
+        </div>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</body>
+</html>

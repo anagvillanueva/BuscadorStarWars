@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background-image: url(/fondo.jpg);
+}
+.carrusel {
+    width: 40%;
+    margin: 0 auto;
+}
+
+img{
+    border-radius: 40px;
+}
+
+#cabecera{
+    padding: 8px;
+    text-align: center;
+    background: #2c313e;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#busqueda{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    color:white;
+    font-weight: bold;
+}
+
+button{
+    padding: 5px;
+    border: none;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #000000; 
+    color: white;
+}
+
+.contenedor-card{
+    padding: 50px;
+    margin-top: 10px;
+    
+}
+
+.card-imagen{
+    width:360px;
+    height:360px;
+    border-radius:0px;
+    justify-content: center;
+}
+
+#card_personaje{
+    margin:20px;
+    padding: 20px;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+   
+}
